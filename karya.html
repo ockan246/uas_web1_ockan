@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Karya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <h1>Portofolio Saya</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="karya.html">Karya</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h2>Karya / Project</h2>
+  <div class="fill-layout">
+    <div class="additional-projects">
+      <div class="project-item">
+        <img src="berita.PNG" alt="Website Portal Berita" class="responsive-media">
+        <h4>Website Portal Berita</h4>
+      </div>
+      <div class="project-item">
+        <img src="confirm.PNG" alt="Website Confirm Box" class="responsive-media">
+        <h4>Website Confirm Box</h4>
+      </div>
+      <div class="project-item">
+        <img src="form.PNG" alt="Website Form Sederhana" class="responsive-media">
+        <h4>Website Form Sederhana</h4>
+      </div>
+      <div class="project-item">
+        <img src="layout.PNG" alt="Website Layout Sederhana" class="responsive-media">
+        <h4>Website Layout Sederhana</h4>
+      </div>
+      <div class="project-item">
+        <img src="tabel.PNG" alt="Website Tabel Sederhana" class="responsive-media">
+        <h4>Website Tabel Sederhana</h4>
+      </div>
+      <div class="project-item">
+        <img src="UTS.PNG" alt="Website UTS" class="responsive-media">
+        <h4>Website UTS</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ockan Aliyudin Akhyar</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('nav-open');
+});
+</script>
+
+</body>
+</html>

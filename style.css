@@ -1,0 +1,341 @@
+/* RESET DASAR */
+* {
+  box-sizing: border-box;
+}
+
+/* Tema warna dan spacing global */
+:root {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --muted: #555555;
+  --accent: #272727; /* used for nav/footer */
+  --gap: 20px;
+  --radius: 6px;
+}
+
+/* AGAR FOOTER BISA DI BAWAH */
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* BODY SEBAGAI FLEX CONTAINER */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+}
+
+/* NAVBAR */
+nav {
+  background-color: var(--accent);
+  padding: 12px 16px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+nav h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 6px 12px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Nav open state */
+.nav-open ul {
+  display: block !important;
+}
+
+/* KONTEN UTAMA */
+section {
+  background: var(--card);
+  margin: 18px auto 50px auto;
+  padding: 22px;
+  width: min(1000px, 95%);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+/* FOOTER */
+footer {
+  background-color: rgb(39, 39, 39);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Footer link small tweak */
+footer p { margin: 0; font-size: 0.95rem }
+
+/* MAP RESPONSIF: gunakan pendekatan fill (iframe mengisi kontainer) */
+.map-responsive {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-container h3 {
+  margin-top: 20px;
+}
+
+/* VIDEO RESPONSIF UNTUK MEDIA.HTML */
+.media-responsive {
+  /* Untuk tata letak tiga kolom: isi area kolom sepenuhnya */
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  display: block;
+}
+.media-responsive video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* isi area tanpa merusak aspect ratio */
+}
+
+/* TIGA KOLOM UNTUK MEDIA.HTML */
+.three-columns {
+  display: flex;
+  gap: var(--gap);
+  align-items: stretch; /* pastikan semua kolom sama tinggi */
+  width: 100%;
+}
+.three-columns .col {
+  flex: 1 1 0; /* sama lebar */
+  background: var(--card);
+  padding: 12px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column; /* agar heading + media tersusun vertikal */
+  gap: 10px;
+}
+.three-columns .col > *:not(h3) {
+  /* Anak selain judul mengambil sisa tinggi kolom */
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.three-columns .col img.responsive-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* isi area tanpa distorsi */
+  border-radius: 4px;
+}
+.three-columns .col audio {
+  /* audio tidak perlu meregang penuh; center dan batasi tinggi */
+  align-self: center;
+  max-height: 80px;
+}
+.three-columns .col h3 {
+  margin-top: 0;
+}
+.responsive-media {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+/* small-note removed (not used) */
+
+/* Responsif: pada layar sempit, kolom menumpuk */
+/* Responsive rules for smaller screens */
+@media (max-width: 900px) {
+  /* clear larger paddings for small devices */
+  section { padding: 16px; margin: 14px auto }
+  nav h1 { font-size: 1.1rem }
+}
+
+@media (max-width: 800px) {
+  /* kolom menumpuk */
+  .three-columns { flex-direction: column }
+  /* nav items vertically stacked for easier tapping */
+  nav ul { display: none }
+  nav ul li { display: block; margin: 8px 0 }
+  .hamburger { display: block; }
+  /* make section take full width with gentle padding */
+  section { width: 98%; padding: 14px }
+}
+
+@media (max-width: 420px) {
+  nav h1 { font-size: 1rem }
+  nav ul li a { font-size: 0.95rem }
+  /* slightly reduce gaps */
+  .three-columns { gap: 12px }
+}
+
+/* Orientation-specific behavior:
+   - landscape (desktop/laptop/tablet held horizontally): isi konten mengisi layar lateral (kiri-ke-kanan)
+   - portrait (phone held vertically): kolom menumpuk (atas-ke-bawah)
+*/
+@media (orientation: landscape) and (min-width: 900px) {
+  /* pastikan section mengisi viewport kecuali header/footer */
+  section {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  /* biarkan tiga kolom mengambil ruang yang tersedia */
+  .three-columns {
+    flex: 1 1 auto;
+    height: 100%;
+    gap: var(--gap);
+  }
+
+  /* setiap kolom ikut mengisi tinggi */
+  .three-columns .col {
+    min-height: 0; /* allow children to flex */
+  }
+
+  /* pastikan media mengisi area kolom */
+  .three-columns .col img.responsive-media,
+  .media-responsive video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (orientation: portrait) {
+  /* pada portrait, kami kembalikan tingginya agar konten mengalir normal */
+  section { min-height: auto }
+  .three-columns { flex-direction: column }
+}
+
+/* General fill-layout: used to make content fill horizontally on landscape and stack on portrait
+   Wrap main content in HTML like:
+   <h2>Title</h2>
+   <div class="fill-layout"> ...content blocks... </div>
+*/
+.fill-layout {
+  /* default: column flow that stretches children to fill available vertical space */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  height: 100%;
+}
+.fill-layout > * {
+  margin-bottom: 0;
+  flex: 1 1 auto; /* allow children to expand and fill */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Additional projects layout */
+.additional-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  justify-items: center;
+}
+.project-item {
+  text-align: center;
+  background: var(--card);
+  padding: 12px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  max-width: 300px;
+}
+.project-item h4 {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+.project-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Responsive for projects grid */
+@media (max-width: 800px) {
+  .additional-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .additional-projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Profile specific layout: keep photo narrower on landscape */
+.profile-photo { display: flex; align-items: center; justify-content: center; }
+.profile-photo img { max-width: 220px; width: 100%; height: auto; border-radius: 6px; }
+.profile-details { padding-left: 12px; padding-right: 12px; overflow: auto }
+
+@media (orientation: landscape) and (min-width: 900px) {
+  .profile-photo { flex: 0 0 240px }
+  .profile-details { flex: 1 1 auto }
+}
+
+@media (orientation: landscape) and (min-width: 900px) {
+  .fill-layout { display: flex; align-items: stretch; gap: var(--gap); }
+  .fill-layout > * { flex: 1 1 0; }
+  .fill-layout img.responsive-media, .fill-layout video { width:100%; height:100%; object-fit:cover }
+  .fill-layout .contact-list { padding: 8px 0 }
+  /* map: remove aspect-ratio box and let iframe fill column height */
+  .fill-layout .map-responsive { position: relative; padding-bottom: 0; height: 100%; }
+  .fill-layout .map-responsive iframe { position: relative; width: 100%; height: 100%; }
+}
+
