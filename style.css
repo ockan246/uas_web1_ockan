@@ -100,8 +100,7 @@ section {
   margin: 18px auto 50px auto;
   padding: 22px;
   width: min(1000px, 95%);
-  border-radius: var(--radius);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  border-radius: var(--radius);  flex: 1; /* Agar footer selalu di bawah */  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
 
 /* FOOTER */
@@ -110,6 +109,7 @@ footer {
   color: white;
   text-align: center;
   padding: 15px;
+  flex-shrink: 0; /* Agar footer tidak shrink dan selalu di bawah */
 }
 
 /* Footer link small tweak */
@@ -320,14 +320,21 @@ footer p { margin: 0; font-size: 0.95rem }
 }
 
 /* Profile specific layout: keep photo narrower on landscape */
-.profile-photo { display: flex; align-items: center; justify-content: center; }
-.profile-photo img { max-width: 220px; width: 100%; height: auto; border-radius: 6px; }
-.profile-details { padding-left: 12px; padding-right: 12px; overflow: auto }
-
-@media (orientation: landscape) and (min-width: 900px) {
-  .profile-photo { flex: 0 0 240px }
-  .profile-details { flex: 1 1 auto }
+.profile-photo { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
 }
+.profile-photo img { 
+  max-width: 220px; 
+  width: auto; 
+  height: auto; 
+  border-radius: 6px; 
+  display: block; 
+  margin: 0 auto; 
+}
+.profile-details { padding: 12px; overflow: auto; display: block; min-height: 200px; }
 
 @media (orientation: landscape) and (min-width: 900px) {
   .fill-layout { display: flex; align-items: stretch; gap: var(--gap); }
