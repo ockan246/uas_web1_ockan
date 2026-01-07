@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Informasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <h1>Portofolio Saya</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="karya.html">Karya</a></li>
+    <li><a href="media.html">Media</a></li>
+    <li><a href="kontak.html">Kontak</a></li>
+    <li><a href="informasi.html">Informasi</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h2>Informasi</h2>
+  <div class="fill-layout">
+    <table border="0" style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td>Jumlah Karya</td>
+        <td>:</td>
+        <td>6 proyek website</td>
+      </tr>
+      <tr>
+        <td>Layanan</td>
+        <td>:</td>
+        <td>Freelance</td>
+      </tr>
+      <tr>
+        <td>Waktu</td>
+        <td>:</td>
+        <td>10 jam</td>
+      </tr>
+      <tr>
+        <td>Online</td>
+        <td>:</td>
+        <td>Senin - Kamis</td>
+      </tr>
+    </table>
+  </div>
+
+  <h3>Pertanyaan Umum</h3>
+  <div class="fill-layout">
+    <dl>
+      <dt>Apa layanan yang Anda tawarkan?</dt>
+      <dd>- Saya menawarkan layanan freelance untuk pengembangan website menggunakan HTML, CSS, dan JavaScript.</dd>
+      <br>
+      <dt>Berapa lama waktu pengerjaan proyek?</dt>
+      <dd>- Waktu pengerjaan tergantung pada kompleksitas proyek, biasanya 1-2 minggu.</dd>
+      <br>
+      <dt>Apakah Anda menerima proyek custom?</dt>
+      <dd>- Ya, saya terbuka untuk diskusi proyek custom sesuai kebutuhan klien.</dd>
+      <br>
+      <dt>Bagaimana cara menghubungi Anda?</dt>
+      <dd>- Anda dapat menghubungi saya melalui halaman Kontak di website ini.</dd>
+    </dl>
+  </div>
+
+  <h3>Komentar</h3>
+  <div class="fill-layout">
+    <form action="mailto:ockanakhyar@email.com?subject=Komentar dari Website" method="post" enctype="text/plain">
+      <label for="name">Nama:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+      
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      
+      <label for="comment">Komentar/Pesan:</label><br>
+      <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+      
+      <input type="submit" value="Kirim Komentar">
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ockan Aliyudin Akhyar</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('nav-open');
+});
+</script>
+
+</body>
+</html>
