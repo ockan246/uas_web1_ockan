@@ -2,7 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Portofolio Saya</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
     <span></span>
     <span></span>
   </button>
-  <h1>Portofolio Saya</h1>
+  <h1>📱 Portofolio Saya</h1>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="profile.html">Profile</a></li>
@@ -25,11 +26,33 @@
 </nav>
 
 <section>
-  <h2>Halo guys.. Selamat datang di website saya.</h2>
+  <h2>Selamat Datang! 👋</h2>
   <div class="fill-layout">
-    <p>Nama saya Ockan Aliyudin Akhyar, Mahasiswa Semester 1 Universitas Pamulang, Fakultas Ilmu Komputer, Prodi Sistem Informasi. Saya membuat website ini untuk memenuhi tugas UAS Pemrograman Web 1. Saya meminta maaf apabila ada kekurangan dalam website ini karena saya masih belajar untuk memperbaikinya, apabila ada kritik atau saran silahkan beritahu saya melalui kontak saya, saya sangat terbuka untuk menerima kritik dan saran, terimakasih.</p>
-    <p>Pada Website ini saya akan menampilkan beberapa karya yang telah saya buat. Beberapa media yang akan saya tampilkan antara lain foto, video, dan audio. Serta saya akan menampilkan alamat saya pada website.</p>
-    <p>Website ini saya buat dengan HTML, CSS, dan sedikit JavaScript.</p>
+    <div style="animation: slideUp 0.6s ease 0.1s both;">
+      <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">
+        Nama saya <strong style="color: #667eea;">Ockan Aliyudin Akhyar</strong>, Mahasiswa Semester 1 Universitas Pamulang, 
+        Fakultas Ilmu Komputer, Prodi Sistem Informasi. Saya membuat website ini untuk memenuhi tugas UAS Pemrograman Web 1. 
+        Saya meminta maaf apabila ada kekurangan dalam website ini karena saya masih belajar untuk memperbaikinya.
+      </p>
+    </div>
+    <div style="animation: slideUp 0.6s ease 0.2s both;">
+      <p style="font-size: 1.05rem; color: #666; line-height: 1.8;">
+        Apabila ada kritik atau saran silahkan beritahu saya melalui kontak saya di menu, saya sangat terbuka untuk menerima 
+        kritik dan saran yang membangun. Terima kasih telah mengunjungi website saya! 🙏
+      </p>
+    </div>
+    <div style="animation: slideUp 0.6s ease 0.3s both;">
+      <p style="font-size: 1.05rem; color: #666; line-height: 1.8;">
+        Pada Website ini saya akan menampilkan beberapa karya yang telah saya buat. Beberapa media yang akan saya tampilkan 
+        antara lain foto, video, dan audio. Serta saya akan menampilkan informasi lengkap mengenai diri saya termasuk lokasi 
+        dan data kontak.
+      </p>
+    </div>
+    <div style="animation: slideUp 0.6s ease 0.4s both; text-align: center;">
+      <p style="font-size: 1rem; color: var(--muted); font-style: italic;">
+        💻 Website ini dibuat dengan <strong>HTML5</strong>, <strong>CSS3</strong>, dan <strong>JavaScript</strong>
+      </p>
+    </div>
   </div>
 </section>
 
@@ -37,14 +60,7 @@
   <p>© 2025 Ockan Aliyudin Akhyar</p>
 </footer>
 
-<script>
-const hamburger = document.getElementById('hamburger');
-const nav = document.querySelector('nav');
-
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('nav-open');
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
